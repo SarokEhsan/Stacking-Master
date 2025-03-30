@@ -36,12 +36,6 @@ public class CubeDrop : MonoBehaviour
         {
             PoseCube();
         }
-        if (gameObject.GetComponent<MeshRenderer>().material.color == Color.white)
-        {
-            //gameObject.SetActive(false);
-
-        }
-
     }
 
     void PoseCube()

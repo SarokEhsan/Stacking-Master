@@ -16,5 +16,6 @@ public class Sensor : MonoBehaviour
     {
         other.gameObject.SetActive(false);
         isGameOver = true;
+        CubeDrop.instance.PauseAction();
     }
 }

@@ -27,9 +27,9 @@ public class CubeFX : MonoBehaviour
     {
         if (dropDone)
         {
-            audioSource.PlayOneShot(dropSoundFX);
             if (!Sensor.instance.isGameOver)
             {
+                audioSource.PlayOneShot(dropSoundFX);
                 Instantiate(dropParticle, transform.position, transform.rotation);
             }
             dropDone = false;
