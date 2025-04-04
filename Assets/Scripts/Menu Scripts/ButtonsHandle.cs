@@ -15,6 +15,7 @@ public class ButtonsHandle : MonoBehaviour
     public GameObject instructionText;
     public GameObject nameUI;
     public TMP_InputField nameInput;
+    public TextMeshProUGUI menuHighScoreDisplay;
     bool isInstructionVisible = false;
     // Start is called before the first frame update
     void Start()
@@ -81,6 +82,16 @@ public class ButtonsHandle : MonoBehaviour
             instructionText.SetActive(false);
             isInstructionVisible = false;
         }
+    }
+    //
+
+    //reset highscore
+    public void HighScoreReset()
+    {
+        HighScoreManager.instance.playerName = null;
+        HighScoreManager.instance.highScore = 0;
+        DataManager.instance.SaveData();
+        menuHighScoreDisplay.text = "Highscore: nobody \"0\"";
     }
     //
 }

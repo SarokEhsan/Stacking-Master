@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class MenuHighScoreDisplay : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public class MenuHighScoreDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DataManager.instance.LoadData();
+
         if (HighScoreManager.instance.playerName == null)
         {
             HighScoreManager.instance.playerName = string.Empty;
+            menuHighScoreDisplay.text = "Highscore: nobody \"0\"";
         }
-        menuHighScoreDisplay.text = "Highscore: " + HighScoreManager.instance.playerName + " \"" + HighScoreManager.instance.highScore + "\"";
+        else
+        {
+            menuHighScoreDisplay.text = "Highscore: " + HighScoreManager.instance.playerName + " \"" + HighScoreManager.instance.highScore + "\"";
+        }
 
     }
 
@@ -25,4 +32,5 @@ public class MenuHighScoreDisplay : MonoBehaviour
     {
         
     }
+
 }

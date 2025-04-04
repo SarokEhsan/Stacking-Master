@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189e64153d67b334984b286fde9c9231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScoreDisplay: {fileID: 600712474}
   isGameOver: 0
 --- !u!82 &72297548
 AudioSource:

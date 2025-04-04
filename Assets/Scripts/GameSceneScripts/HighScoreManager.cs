@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HighScoreManager : MonoBehaviour
 {
     static public HighScoreManager instance;
+
     public string tempPlayerName;
     public string playerName;
     public int highScore;
@@ -35,7 +37,7 @@ public class HighScoreManager : MonoBehaviour
 
     public void HighScoreSubmit()
     {
-        if (PointManager.instance.totalPoints >  highScore)
+        if (PointManager.instance.totalPoints > highScore)
         {
             playerName = tempPlayerName;
             highScore = PointManager.instance.totalPoints;

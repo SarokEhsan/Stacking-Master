@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Sensor : MonoBehaviour
 {
     static public Sensor instance;
+
+    public TextMeshProUGUI highScoreDisplay;
     public bool isGameOver = false;
     private AudioSource audioSource;
 
@@ -23,6 +26,8 @@ public class Sensor : MonoBehaviour
         isGameOver = true;
         CubeDrop.instance.PauseAction();
         HighScoreManager.instance.HighScoreSubmit();
+        highScoreDisplay.text = "Highscore: " + HighScoreManager.instance.playerName + " \"" + HighScoreManager.instance.highScore + "\"";
         audioSource.Play();
+        DataManager.instance.SaveData();
     }
 }

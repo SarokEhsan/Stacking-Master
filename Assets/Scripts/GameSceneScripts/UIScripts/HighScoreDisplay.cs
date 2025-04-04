@@ -10,12 +10,11 @@ public class HighScoreDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        highScoreDisplay.text = "Highscore: " + HighScoreManager.instance.playerName + " \"" + HighScoreManager.instance.highScore + "\"";
     }
 
     // Update is called once per frame
     void Update()
     {
-        highScoreDisplay.text = "Highscore: " + HighScoreManager.instance.playerName + " \"" + HighScoreManager.instance.highScore + "\"";
     }
 }
